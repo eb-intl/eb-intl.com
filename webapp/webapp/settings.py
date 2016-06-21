@@ -27,20 +27,31 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+SITE_ID = 1
 
 # Application definition
 
 INSTALLED_APPS = [
+    'jet',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
 
     'photologue',
     'sortedm2m',
 
+    'apps',
+    'apps.blogs',
+    'apps.clients',
+    'apps.factories',
+    'apps.feeds',
+    'apps.products',
+    'apps.resources',
+    'apps.services',
 ]
 
 MIDDLEWARE_CLASSES = [
