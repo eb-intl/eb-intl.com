@@ -48,14 +48,12 @@ class Office(models.Model):
     def __unicode__(self):
         return self.name
 
-class Office(models.Model):
-    slug = models.CharField(max_length=512, blank=True, null=True)
+
+class Social(models.Model):
+    order = models.IntegerField(default=0)
     name = models.CharField(max_length=512, blank=True, null=True)
-    address = models.TextField(blank=True, null=True)
-    telephone = models.CharField(max_length=512, blank=True, null=True)
-    #location =
-    image = models.ForeignKey(Photo, related_name='offices')
-    primary = models.BooleanField(default=False)
+    link = models.URLField(max_length=512, blank=True, null=True)
+    icon = models.CharField(max_length=512, blank=True, null=True)
 
     def __unicode__(self):
         return self.name
