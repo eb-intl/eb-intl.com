@@ -17,7 +17,32 @@
                 <div data-filter=".motion" class="cbp-filter-item"> ---</div>
             </div><!--/end Filters Container-->
 
+
+
+
             <div id="grid-container" class="cbp-l-grid-gallery">
+
+                {% for product in products %}
+                <div class="cbp-item {{ product.type }}">
+                    <a href="{% static 'assets/ajax/project1.html' %}" class="cbp-caption cbp-singlePageInline"
+                       data-title="{{ product.name }}<br>by {{ product.author }}">
+                        <div class="cbp-caption-defaultWrap">
+                            <img src="{{ product.image.get_display_url }}" alt="">
+                        </div>
+                        <div class="cbp-caption-activeWrap">
+                            <div class="cbp-l-caption-alignLeft">
+                                <div class="cbp-l-caption-body">
+                                    <div class="cbp-l-caption-title">{{ product.name }}</div>
+                                    <div class="cbp-l-caption-desc">by {{ product.author }}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+
+
+
                 <div class="cbp-item print motion">
                     <a href="{% static 'assets/ajax/project1.html' %}" class="cbp-caption cbp-singlePageInline"
                        data-title="World Clock Widget<br>by Paul Flavius Nechita">

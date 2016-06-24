@@ -51,7 +51,6 @@ INSTALLED_APPS = [
     'apps.feeds',
     'apps.products',
     'apps.resources',
-    'apps.services',
     'apps.company',
 ]
 
