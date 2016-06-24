@@ -28,9 +28,11 @@ class OfficeAdmin(admin.ModelAdmin):
 
 @admin.register(Employee)
 class EmployeeAdmin(admin.ModelAdmin):
-    list_display = ('id', 'order', 'name', 'description', 'featured')
-    search_fields = ('id', 'order', 'name', 'description', 'featured')
-    ordering = ['id', 'order', 'name', 'description', 'featured']
+    list_display = ('id', 'order', 'name', 'short_description',
+                    'long_description', 'executive')
+    search_fields = ('id', 'order', 'name', 'short_description',
+                     'long_description', 'executive')
+    ordering = ['id', 'order', 'name', 'executive']
     #list_editable = ('active',)
     list_display_links = ('id', 'name')
     prepopulated_fields = {'slug': ('name',)}

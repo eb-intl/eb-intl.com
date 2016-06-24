@@ -1,6 +1,10 @@
 from django.conf.urls import url, include
 
+from views import Index
+
+
 urlpatterns = [
+    url(r'^$', Index.as_view(), name='index'),
     url(r'^blogs/', include('apps.blogs.urls', 'blogs')),
     url(r'^clients/', include('apps.clients.urls', 'clients')),
     url(r'^factories/', include('apps.factories.urls', 'factories')),

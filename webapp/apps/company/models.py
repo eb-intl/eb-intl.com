@@ -2,7 +2,17 @@ from __future__ import unicode_literals
 
 from django.db import models
 
-from photologue.models import ImageModel, Photo
+from photologue.models import Photo
+
+
+class Social(models.Model):
+    order = models.IntegerField(default=0)
+    name = models.CharField(max_length=512, blank=True, null=True)
+    link = models.URLField(max_length=512, blank=True, null=True)
+    icon = models.CharField(max_length=512, blank=True, null=True)
+
+    def __unicode__(self):
+        return self.name
 
 
 class Service(models.Model):
@@ -27,10 +37,13 @@ class Employee(models.Model):
     order = models.IntegerField(default=0)
     slug = models.CharField(max_length=512, blank=True, null=True)
     name = models.CharField(max_length=512, blank=True, null=True)
-    description = models.TextField(blank=True, null=True)
+    short_description = models.TextField(blank=True, null=True)
+    long_description = models.TextField(blank=True, null=True)
     position = models.ForeignKey(Position, related_name='employees')
     image = models.ForeignKey(Photo, related_name='employees')
-    featured = models.BooleanField(default=False)
+    social = models.ForeignKey(Social, related_name='employees',
+                               blank=True, null=True)
+    executive = models.BooleanField(default=False)
 
     def __unicode__(self):
         return self.name
@@ -49,11 +62,4 @@ class Office(models.Model):
         return self.name
 
 
-class Social(models.Model):
-    order = models.IntegerField(default=0)
-    name = models.CharField(max_length=512, blank=True, null=True)
-    link = models.URLField(max_length=512, blank=True, null=True)
-    icon = models.CharField(max_length=512, blank=True, null=True)
 
-    def __unicode__(self):
-        return self.name
