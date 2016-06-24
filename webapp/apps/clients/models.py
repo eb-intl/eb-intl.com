@@ -4,7 +4,6 @@ from django.db import models
 from photologue.models import Photo
 
 
-
 class Testimonial(models.Model):
     title = models.CharField(max_length=512, blank=True, null=True)
     text = models.TextField(blank=True, null=True)
