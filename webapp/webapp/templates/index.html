@@ -4,7 +4,7 @@
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
 <!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
 <head>
-	<title>{%  block title %}EastBridge Engineering{% endblock %}</title>
+	<title>{%  block title %}EastBridge Strategic Sources{% endblock %}</title>
 
 	<!-- Meta -->
 	<meta charset="utf-8">
@@ -116,5 +116,7 @@ The data-spy and data-target are part of the built-in Bootstrap scrollspy functi
 	<!--[if lt IE 10]>
 		<script src="{% static 'assets/plugins/sky-forms-pro/skyforms/js/jquery.placeholder.min.js' %}"></script>
 		<![endif]-->
+
+		{% include 'snippets/googlecode.html' %}
 	</body>
-	</html>
+</html>
