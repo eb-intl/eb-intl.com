@@ -2,6 +2,7 @@ from django.views.generic import DetailView, TemplateView
 
 from company.models import Employee
 from products.models import Product
+from about.models import ContentBox
 
 
 class Index(TemplateView):
@@ -15,6 +16,8 @@ class Index(TemplateView):
         context['team'] = Employee.objects.filter(executive=True)
 
         context['products'] = Product.objects.filter(private=False)
+
+        context['contentboxes'] = ContentBox.objects.all()
         return context
 
 
