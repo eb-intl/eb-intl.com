@@ -11,7 +11,8 @@
             </button>
 
             <a class="navbar-brand" href="#intro">
-                <span>East</span>Bridge <br><small style="font-size: 14px;">Strategic Sources</small>
+                <span>East</span>Bridge <br>
+                <small style="font-size: 14px;">Strategic Sources</small>
                 <!-- <img src="{% static 'eb-intl_small.png' %}" alt="Logo"> -->
             </a>
         </div>
@@ -23,7 +24,7 @@
                     <li class="page-scroll home">
                         <a href="#about">{% trans 'About Us' %}</a>
                     </li>
-                    <li class="page-scroll home">
+                    <li class="page-scroll">
                         <a href="#services">{% trans 'Services' %}</a>
                     </li>
                     <li class="page-scroll">
@@ -38,16 +39,15 @@
                     <li class="page-scroll">
                         <a href="#factories">{% trans 'Factories' %}</a>
                     </li>
-                         <li class="page-scroll">
-                        <a href="#factories">{% trans 'Team' %}</a>
-                    </li>
-</li>
                     <li class="page-scroll">
-                        <a href="#factories">{% trans 'Contact' %}</a>
+                        <a href="#team">{% trans 'Team' %}</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#contact">{% trans 'Contact' %}</a>
                     </li>
                     <li class="dropdown">
                         <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-                            {% trans 'Resources' %}
+                            <i class="fa fa-chevron-down"></i>
                         </a>
                         <ul class="dropdown-menu">
                             <li class="page-scroll"><a href="#news">{% trans 'News' %}</a></li>

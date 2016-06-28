@@ -3,17 +3,7 @@
 """
 from django.contrib import admin
 
-from models import Office, Employee, Position, Service
-
-
-@admin.register(Service)
-class ServiceAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name', 'description')
-    search_fields = ('id', 'name', 'slug', 'description')
-    ordering = ['id', 'name', 'slug', 'description']
-    #list_editable = ('active',)
-    list_display_links = ('id', 'name')
-    prepopulated_fields = {'slug': ('name',)}
+from models import Office, Employee, Position
 
 
 @admin.register(Office)
@@ -36,6 +26,7 @@ class EmployeeAdmin(admin.ModelAdmin):
     #list_editable = ('active',)
     list_display_links = ('id', 'name')
     prepopulated_fields = {'slug': ('name',)}
+
 
 @admin.register(Position)
 class PositionAdmin(admin.ModelAdmin):

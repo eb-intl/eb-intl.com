@@ -3,3 +3,4 @@ django-photologue>=3.5.1
 bpython>=0.12
 pytz==2016.4
 django-jet==0.1.4
+django-fontawesome==0.2.6

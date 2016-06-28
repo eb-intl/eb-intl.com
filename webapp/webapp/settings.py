@@ -43,14 +43,17 @@ INSTALLED_APPS = [
 
     'photologue',
     'sortedm2m',
+    'fontawesome',
 
     'apps',
+    'apps.about',
     'apps.blogs',
     'apps.clients',
     'apps.factories',
     'apps.feeds',
     'apps.products',
     'apps.resources',
+    'apps.services',
     'apps.company',
 ]
 

@@ -1,7 +1,7 @@
 from __future__ import unicode_literals
 
 from django.db import models
-
+from fontawesome.fields import IconField
 from photologue.models import Photo
 
 
@@ -9,17 +9,7 @@ class Social(models.Model):
     order = models.IntegerField(default=0)
     name = models.CharField(max_length=512, blank=True, null=True)
     link = models.URLField(max_length=512, blank=True, null=True)
-    icon = models.CharField(max_length=512, blank=True, null=True)
-
-    def __unicode__(self):
-        return self.name
-
-
-class Service(models.Model):
-    slug = models.CharField(max_length=512, blank=True, null=True)
-    name = models.CharField(max_length=512, blank=True, null=True)
-    description = models.TextField(blank=True, null=True)
-    image = models.ForeignKey(Photo, related_name='services')
+    icon = IconField()
 
     def __unicode__(self):
         return self.name
