@@ -27,7 +27,7 @@
                     <a href="{% static 'assets/ajax/project1.html' %}" class="cbp-caption cbp-singlePageInline"
                        data-title="{{ product.name }}<br>by {{ product.author }}">
                         <div class="cbp-caption-defaultWrap">
-                            <img src="{{ product.image.get_display_url }}" alt="">
+                            <img src="{{ product.image.get_400x300_url }}" alt="">
                         </div>
                         <div class="cbp-caption-activeWrap">
                             <div class="cbp-l-caption-alignLeft">
@@ -42,7 +42,7 @@
                 {% endfor %}
 
 
-
+                {% comment %}
                 <div class="cbp-item print motion">
                     <a href="{% static 'assets/ajax/project1.html' %}" class="cbp-caption cbp-singlePageInline"
                        data-title="World Clock Widget<br>by Paul Flavius Nechita">
@@ -187,6 +187,7 @@
                         </div>
                     </a>
                 </div>
+                {% endcomment %}
             </div>
 
             <div class="cbp-l-loadMore-button">

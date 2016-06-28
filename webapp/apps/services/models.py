@@ -7,13 +7,22 @@ from photologue.models import Photo
 
 
 class Service(models.Model):
-    sites = models.ManyToManyField(Site)
     slug = models.CharField(max_length=512, blank=True, null=True)
     title = models.CharField(max_length=512, blank=True, null=True)
     description = models.TextField(blank=True, null=True)
     text = models.TextField(blank=True, null=True)
     image = models.ForeignKey(Photo, related_name='services')
     icon = IconField()
+
+    def __unicode__(self):
+        return self.title
+
+
+class ServiceGroup(models.Model):
+    title = models.CharField(max_length=512, blank=True, null=True)
+    description = models.TextField(blank=True, null=True)
+    image = models.ForeignKey(Photo, related_name='service_groups')
+    services = models.ManyToManyField(Service, related_name='groups')
 
     def __unicode__(self):
         return self.title
