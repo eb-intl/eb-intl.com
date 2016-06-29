@@ -5,7 +5,7 @@ from views import Index
 
 urlpatterns = [
     url(r'^$', Index.as_view(), name='index'),
-    url(r'^blogs/', include('apps.blogs.urls', 'blogs')),
+    url(r'^news/', include('apps.blog.urls', 'news')),
     url(r'^clients/', include('apps.clients.urls', 'clients')),
     url(r'^factories/', include('apps.factories.urls', 'factories')),
     url(r'^feeds/', include('apps.feeds.urls', 'feeds')),

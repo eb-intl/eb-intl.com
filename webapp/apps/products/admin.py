@@ -8,8 +8,8 @@ from models import Product
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name', 'description', 'private')
+    list_display = ('id', 'name', 'description')
     search_fields = ('id', 'name', 'slug', 'description')
-    ordering = ['id', 'name', 'slug', 'description', 'private']
+    ordering = ['id', 'name', 'slug', 'description']
     list_display_links = ('id', 'name')
     prepopulated_fields = {'slug': ('name',)}

@@ -11,18 +11,17 @@ class Service(models.Model):
     title = models.CharField(max_length=512, blank=True, null=True)
     description = models.TextField(blank=True, null=True)
     text = models.TextField(blank=True, null=True)
-    image = models.ForeignKey(Photo, related_name='services')
+    image = models.ForeignKey(Photo, related_name='services', blank=True, null=True)
     icon = IconField()
 
     def __unicode__(self):
         return self.title
 
-
 class ServiceGroup(models.Model):
     title = models.CharField(max_length=512, blank=True, null=True)
     description = models.TextField(blank=True, null=True)
-    image = models.ForeignKey(Photo, related_name='service_groups')
-    services = models.ManyToManyField(Service, related_name='groups')
+    image = models.ForeignKey(Photo, related_name='service_groups', blank=True, null=True)
+    services = models.ManyToManyField(Service, related_name='groups', blank=True)
 
     def __unicode__(self):
         return self.title

@@ -32,7 +32,6 @@ SITE_ID = 1
 # Application definition
 
 INSTALLED_APPS = [
-    'jet',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -47,7 +46,7 @@ INSTALLED_APPS = [
 
     'apps',
     'apps.about',
-    'apps.blogs',
+    'apps.blog',
     'apps.clients',
     'apps.factories',
     'apps.feeds',

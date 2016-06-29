@@ -10,7 +10,7 @@ from django.conf import settings
 urlpatterns = [
     url(r'^', include('apps.urls', 'apps')),
 
-    url(r'^jet/', include('jet.urls', 'jet')),
+    #url(r'^jet/', include('jet.urls', 'jet')),
     url(r'^admin/', admin.site.urls),
     url(r'^photologue/', include('photologue.urls', namespace='photologue')),
 
