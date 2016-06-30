@@ -3,7 +3,16 @@
 """
 from django.contrib import admin
 
-from models import Office, Employee, Position
+from models import Office, Employee, Position, Social
+
+
+@admin.register(Social)
+class Socialdmin(admin.ModelAdmin):
+    list_display = ('id', 'name', 'link')
+    search_fields = ('id', 'name', 'link')
+    ordering = ['id', 'name', 'link']
+    list_display_links = ('id', 'name', 'link')
+
 
 
 @admin.register(Office)

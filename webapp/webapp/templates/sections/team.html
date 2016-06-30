@@ -6,7 +6,7 @@
             <div class="title-v1">
                 <h2>{% trans 'Our Team' %}</h2>
 
-                <p><strong>EastBridge Engineering, a division of the EastBridge family of companies, was founded in 2003
+                <p><strong>EastBridge Engineering, a division of the EastBridge family of companies, <br>was founded in 2003
                     to provide manufacturers, product designers and entrepreneurs with on site manufacturing management
                     and related services around the world.</strong>
                     <br>Our engineers and staff of specialists manage new product development, production scale-up,
@@ -23,11 +23,12 @@
                 {% for member in team %}
                 <li class="col-sm-3 col-xs-6 md-margin-bottom-30">
                     <div class="team-img">
-                        <img class="img-responsive" src="{{ member.image.get_display_url }}" alt="">
+                        <img class="img-responsive" src="{{ member.image.get_400x400_url }}" alt="">
                         <ul>
-                            <li><a href="#"><i class="icon-custom icon-sm rounded-x fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="icon-custom icon-sm rounded-x fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="icon-custom icon-sm rounded-x fa fa-google-plus"></i></a></li>
+                            {% for net in member.social.all %}
+                            {{ net }}
+                                <li><a href="{{ net.link }}"><i class="icon-custom icon-sm rounded-x fa fa-{{ net.icon }}"></i></a></li>
+                            {% endfor %}
                         </ul>
                     </div>
                     <h3>{{ member.name }}</h3>
@@ -38,6 +39,10 @@
 
 
             </ul>
+
+            <div class="cbp-l-loadMore-button">
+                <a href="{% static 'assets/ajax/loadMore.html' %}" class="cbp-l-loadMore-button-link">{% trans 'ALL EMPLOYEES' %}</a>
+            </div>
         </div>
     </div>
 </section>

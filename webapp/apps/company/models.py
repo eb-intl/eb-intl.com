@@ -31,8 +31,8 @@ class Employee(models.Model):
     long_description = models.TextField(blank=True, null=True)
     position = models.ForeignKey(Position, related_name='employees')
     image = models.ForeignKey(Photo, related_name='employees')
-    social = models.ForeignKey(Social, related_name='employees',
-                               blank=True, null=True)
+    social = models.ManyToManyField(Social, related_name='employees',
+                               blank=True)
     executive = models.BooleanField(default=False)
 
     def __unicode__(self):

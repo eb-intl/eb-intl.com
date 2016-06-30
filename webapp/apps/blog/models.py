@@ -14,7 +14,7 @@ class Article(models.Model):
     publish = models.BooleanField(default=False)
 
     image = models.ForeignKey(Photo, related_name='articles', blank=True, null=True)
-    authors = models.ManyToManyField('company.Employee', blank=True, null=True)
+    authors = models.ManyToManyField('company.Employee', blank=True)
     keywords = models.TextField(blank=True, null=True)
 
     def __unicode__(self):
