@@ -2,7 +2,7 @@ from django.views.generic import DetailView, TemplateView
 
 from company.models import Employee
 from products.models import Product
-from about.models import ContentBox
+from about.models import ContentBox, TextBox
 from services.models import ServiceGroup
 
 
@@ -16,15 +16,11 @@ class Index(TemplateView):
 
         context['team'] = Employee.objects.filter(executive=True)
 
-        context['products'] = Product.objects.filter(public=False)
+        context['products'] = Product.objects.filter(public=True)
 
         context['contentboxes'] = ContentBox.objects.all()
 
+        context['textboxes'] = TextBox.objects.all()
+
         context['service_groups'] = ServiceGroup.objects.all()
         return context
-
-
-'''
-
-
-'''

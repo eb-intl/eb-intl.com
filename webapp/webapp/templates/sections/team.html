@@ -26,7 +26,6 @@
                         <img class="img-responsive" src="{{ member.image.get_400x400_url }}" alt="">
                         <ul>
                             {% for net in member.social.all %}
-                            {{ net }}
                                 <li><a href="{{ net.link }}"><i class="icon-custom icon-sm rounded-x fa fa-{{ net.icon }}"></i></a></li>
                             {% endfor %}
                         </ul>
@@ -40,10 +39,52 @@
 
             </ul>
 
-            <div class="cbp-l-loadMore-button">
-                <a href="{% static 'assets/ajax/loadMore.html' %}" class="cbp-l-loadMore-button-link">{% trans 'ALL EMPLOYEES' %}</a>
-            </div>
         </div>
     </div>
+
+
+
+
+<div class="alert alert-warning fade in alert-dismissable">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+    <strong>John D!</strong> If you dont' want to show all your employees you can do this
+</div>
+
+    <div class="parallax-counter parallaxBg" style="background-position: 50% -608px;">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-3 col-xs-6">
+						<div class="counters">
+							<span class="counter">10629</span>
+							<h4>Clients</h4>
+						</div>
+					</div>
+					<div class="col-sm-2 col-xs-6">
+						<div class="counters">
+							<span class="counter">277</span>
+							<h4>Products</h4>
+						</div>
+					</div>
+					<div class="col-sm-2 col-xs-6">
+						<div class="counters">
+							<span class="counter">78</span>
+							<h4>Team Members</h4>
+						</div>
+					</div>
+					<div class="col-sm-2 col-xs-6">
+						<div class="counters">
+							<span class="counter">109</span>
+							<h4>Distributors</h4>
+						</div>
+					</div>
+                    <div class="col-sm-3 col-xs-6">
+						<div class="counters">
+							<span class="counter">109</span>
+							<h4>Factories</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 </section>
 <!--  About Section -->

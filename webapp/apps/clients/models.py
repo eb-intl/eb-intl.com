@@ -18,7 +18,7 @@ class Client(models.Model):
     name = models.CharField(max_length=512, blank=True, null=True)
     description = models.TextField(blank=True, null=True)
     link = models.URLField(max_length=512, blank=True, null=True)
-    image = models.ForeignKey(Photo, related_name='client')
+    image = models.ForeignKey(Photo, related_name='client', blank=True, null=True)
     private = models.BooleanField(default=True)
     products = models.ManyToManyField(
         'products.Product', related_name='clients', blank=True)

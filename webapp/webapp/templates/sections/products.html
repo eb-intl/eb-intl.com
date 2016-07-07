@@ -4,17 +4,16 @@
     <div class="container content-lg">
         <div class="title-v1">
             <h2>{% trans 'Latest Products' %}</h2>
-            <p>{% blocktrans %} We do <strong>things</strong> differently company providing key digital services. <br>
-                Focused on helping our clients to build a <strong>successful</strong> business on web and mobile.{% endblocktrans %}</p>
+            <p>{% blocktrans %}<strong>Lorem ipsum</strong>  dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                {% endblocktrans %}</p>
         </div>
 
 
         <div class="cube-portfolio">
             <div id="filters-container" class="cbp-l-filters-button">
                 <div data-filter="*" class="cbp-filter-item-active cbp-filter-item"> {% trans 'All' %}</div>
-                <div data-filter=".print" class="cbp-filter-item"> {% trans 'Our Clients' %}</div>
-                <div data-filter=".web-design" class="cbp-filter-item"> {% trans 'Our' %}</div>
-                <div data-filter=".motion" class="cbp-filter-item"> ---</div>
+                <div data-filter=".client" class="cbp-filter-item"> {% trans 'Clients' %}</div>
+                <div data-filter=".ours" class="cbp-filter-item"> {% trans 'Ours' %}</div>
             </div><!--/end Filters Container-->
 
 
@@ -22,18 +21,18 @@
 
             <div id="grid-container" class="cbp-l-grid-gallery">
 
-                {% for product in products %}
+                {% for product in products.all %}
                 <div class="cbp-item {{ product.type }}">
                     <a href="{% static 'assets/ajax/project1.html' %}" class="cbp-caption cbp-singlePageInline"
-                       data-title="{{ product.name }}<br>by {{ product.author }}">
+                       data-title="{{ product.name }}<br>by {{ product.clients.name }}">
                         <div class="cbp-caption-defaultWrap">
-                            <img src="{{ product.image.get_400x300_url }}" alt="">
+                            <img src="{{ product.image.get_400x400_url }}" alt="">
                         </div>
                         <div class="cbp-caption-activeWrap">
                             <div class="cbp-l-caption-alignLeft">
                                 <div class="cbp-l-caption-body">
                                     <div class="cbp-l-caption-title">{{ product.name }}</div>
-                                    <div class="cbp-l-caption-desc">by {{ product.author }}</div>
+                                    <div class="cbp-l-caption-desc">by {{ product.client.1.name }}</div>
                                 </div>
                             </div>
                         </div>

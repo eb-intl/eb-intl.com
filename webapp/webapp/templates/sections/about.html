@@ -19,21 +19,25 @@
 
 
 
-    {% comment %}
+
     <div class="about-image bg-grey">
+        {% for tbox in textboxes %}
         <div class="container">
             <div class="title-v1">
-                <h1>We are Unify Agency</h1>
-                <p>Unify <strong>creative</strong> technology company providing key digital services. <br>
-                    Focused on helping our clients to build a <strong>successful</strong> business on web and mobile.
-                </p>
+                <h1>{% trans tbox.title %}</h1>
+                <p>{{ tbox.body }}</p>
             </div>
             <div class="img-center">
-                <img class="img-responsive" src="{% static 'assets/img/mockup/mockup.png' %}" alt="">
+                <img class="img-responsive" src="{{ tbox.image.get_1000x550_url }}" alt="{{ tbox.iamge.}}">
             </div>
         </div>
+        {% endfor %}
     </div>
 
+
+
+
+{% comment %}
     <div class="container content-lg">
         <div class="title-v1">
             <h2>Our Vision And Mission</h2>
