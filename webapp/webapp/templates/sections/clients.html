@@ -1,18 +1,37 @@
 {% load staticfiles i18n %}
-<div class="clients-section parallaxBg">
-    <div class="container">
-        <div class="title-v1">
-            <h2>{% trans 'Our Clients' %}</h2>
+<!-- Portfolio Section -->
+<section id="clients"  class="client-section">
+
+    <div class="clients-section parallaxBg">
+        <div class="container">
+            <div class="title-v1">
+                <h2>{% trans 'Our Clients' %}</h2>
+                <p>{% blocktrans %}<strong>Lorem ipsum</strong>  dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                {% endblocktrans %}</p>
+            </div>
+
+
+            <ul class="owl-clients-v2">
+                <li class="item"><a href="#"><img src="{% static 'assets/img/clients/national-geographic.png' %}"
+                                                  alt=""></a></li>
+                <li class="item"><a href="#"><img src="{% static 'assets/img/clients/inspiring.png' %}" alt=""></a></li>
+                <li class="item"><a href="#"><img src="{% static 'assets/img/clients/fred-perry.png' %}" alt=""></a>
+                </li>
+                <li class="item"><a href="#"><img src="{% static 'assets/img/clients/emirates.png' %}" alt=""></a></li>
+                <li class="item"><a href="#"><img src="{% static 'assets/img/clients/baderbrau.png' %}" alt=""></a></li>
+                <li class="item"><a href="#"><img src="{% static 'assets/img/clients/inspiring.png' %}" alt=""></a></li>
+            </ul>
         </div>
-        <ul class="owl-clients-v2">
-            <li class="item"><a href="#"><img src="{% static 'assets/img/clients/national-geographic.png' %}"
-                                              alt=""></a></li>
-            <li class="item"><a href="#"><img src="{% static 'assets/img/clients/inspiring.png' %}" alt=""></a></li>
-            <li class="item"><a href="#"><img src="{% static 'assets/img/clients/fred-perry.png' %}" alt=""></a>
-            </li>
-            <li class="item"><a href="#"><img src="{% static 'assets/img/clients/emirates.png' %}" alt=""></a></li>
-            <li class="item"><a href="#"><img src="{% static 'assets/img/clients/baderbrau.png' %}" alt=""></a></li>
-            <li class="item"><a href="#"><img src="{% static 'assets/img/clients/inspiring.png' %}" alt=""></a></li>
-        </ul>
     </div>
-</div>
+
+{% include 'snippets/testimonials.html' %}
+
+</section>
+<!-- End Portfolio Section -->
+
+
+
+
+
+
+
