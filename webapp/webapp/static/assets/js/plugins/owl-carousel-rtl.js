@@ -54,13 +54,13 @@ var OwlCarousel = function () {
                         items: 1
                     },
                     600:{
-                        items: 3
+                        items: 5
                     },
                     900:{
-                        items: 4
+                        items: 6
                     },
                     1000:{
-                        items: 5
+                        items: 7
                     }
                 }
             });
