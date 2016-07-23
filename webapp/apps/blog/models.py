@@ -1,11 +1,12 @@
 from __future__ import unicode_literals
 
+from django.core.urlresolvers import reverse
 from django.db import models
 from photologue.models import Photo
 
 
 class Article(models.Model):
-    slug = models.CharField(max_length=512, blank=True, null=True)
+    slug = models.SlugField(max_length=512, unique=True)
     title = models.CharField(max_length=512, blank=True, null=True)
     description = models.TextField(blank=True, null=True)
     body = models.TextField(blank=True, null=True)
@@ -19,3 +20,10 @@ class Article(models.Model):
 
     def __unicode__(self):
         return self.title
+
+    def get_absolute_url(self):
+        kwargs = {'year': self.created.year,
+                  'month': self.created.month,
+                  'day': self.created.day,
+                  'slug': self.slug}
+        return reverse('blog-detail', kwargs=kwargs)
