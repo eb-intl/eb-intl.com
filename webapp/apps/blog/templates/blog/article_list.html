@@ -4,7 +4,28 @@
 
 {% block content %}
     <div class="blog_masonry_3col">
-    <div class="container content grid-boxes masonry" style="position: relative; height: 1508px;">
+        <div class="container content grid-boxes masonry" style="position: relative; height: 1508px;">
+
+            {% for object in object_list %}
+                <div class="grid-boxes-in masonry-brick pull-left"
+                     style="width: 362px; top: 40px; left: 15px;">
+                    <img class="img-responsive" src="{{ object.image.get_360x220_url }}" alt="{{ object.image.caption }}">
+                            <div class="grid-boxes-caption">
+                            <h3><a href="{% url 'apps:blog:detail' object.created.year object.created.month object.created.day object.slug %}">{{ object.title }}</a></h3>
+                <ul class=" list-inline grid-boxes-news">
+                    <li><span>By</span> <a href="#">{{ object.authors.all }}</a></li>
+                    <li>|</li>
+                    <li><i class="fa fa-clock-o"></i> {{ object.created }}</li>
+                    <li>|</li>
+                    <li><a href="#"><i class="fa fa-comments-o"></i> 06</a></li>
+                    </ul>
+                    <p>{{ object.description|truncatechars:245 }}</p>
+                </div>
+                </div>
+
+            {% endfor %}
+
+        {% comment %}
         <div class="grid-boxes-in masonry-brick" style="position: absolute; width: 362px; top: 40px; left: 15px;">
             <img class="img-responsive" src="/static/Unify-v1.9.4/HTML/assets/img/main/img3.jpg" alt="">
             <div class="grid-boxes-caption">
@@ -16,11 +37,14 @@
                     <li>|</li>
                     <li><a href="#"><i class="fa fa-comments-o"></i> 06</a></li>
                 </ul>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+                    and scrambled it to make a type specimen book.</p>
             </div>
         </div>
 
-        <div class="grid-boxes-in grid-boxes-qoute masonry-brick" style="position: absolute; width: 362px; top: 40px; left: 405px;">
+        <div class="grid-boxes-in grid-boxes-qoute masonry-brick"
+             style="position: absolute; width: 362px; top: 40px; left: 405px;">
             <div class="grid-boxes-caption grid-boxes-quote bg-color-sea">
                 <p>If you can design one thing you can design everything. Just Believe It</p>
                 <span>- Htmlstream -</span>
@@ -28,7 +52,8 @@
         </div>
 
         <div class="grid-boxes-in masonry-brick" style="position: absolute; width: 362px; top: 40px; left: 795px;">
-            <iframe width="100%" height="305" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/82304720&amp;auto_play=false&amp;hide_related=false&amp;visual=true"></iframe>
+            <iframe width="100%" height="305" scrolling="no" frameborder="no"
+                    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/82304720&amp;auto_play=false&amp;hide_related=false&amp;visual=true"></iframe>
             <div class="grid-boxes-caption">
                 <h3><a href="#">Let's Play Pretend (We Set Sail)</a></h3>
                 <ul class="list-inline grid-boxes-news">
@@ -38,12 +63,14 @@
                     <li>|</li>
                     <li><a href="#"><i class="fa fa-comments-o"></i> 27</a></li>
                 </ul>
-                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                <p>It is a long established fact that a reader will be distracted by the readable content of a page when
+                    looking at its layout.</p>
             </div>
         </div>
 
         <div class="grid-boxes-in masonry-brick" style="position: absolute; width: 362px; top: 258px; left: 405px;">
-            <iframe width="100%" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/78441806&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_artwork=true"></iframe>
+            <iframe width="100%" scrolling="no" frameborder="no"
+                    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/78441806&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_artwork=true"></iframe>
             <div class="grid-boxes-caption">
                 <h3><a href="#">SoundCloud Music Integration</a></h3>
                 <ul class="list-inline grid-boxes-news">
@@ -53,7 +80,8 @@
                     <li>|</li>
                     <li><a href="#"><i class="fa fa-comments-o"></i> 14</a></li>
                 </ul>
-                <p>Donec semper a mod felis vel est porttitor interdum. Sed risusdak velit, facilisis et arcu hendrerit, scelerisque iaculis felis...</p>
+                <p>Donec semper a mod felis vel est porttitor interdum. Sed risusdak velit, facilisis et arcu hendrerit,
+                    scelerisque iaculis felis...</p>
             </div>
         </div>
 
@@ -67,7 +95,10 @@
                     <li>|</li>
                     <li><a href="#"><i class="fa fa-comments-o"></i> 12</a></li>
                 </ul>
-                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered
+                    alteration in some form, by injected humour, or randomised words which don't look even slightly
+                    believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't
+                    anything embarrassing hidden in the middle of text.</p>
             </div>
         </div>
 
@@ -82,7 +113,8 @@
                     <li>|</li>
                     <li><a href="#"><i class="fa fa-comments-o"></i> 12</a></li>
                 </ul>
-                <p>Donec semper tempus nisi felis vel est porttitor interdum. Sed risusdak velit, facilisis et arcu hendrerit, scelerisque iaculis felis...</p>
+                <p>Donec semper tempus nisi felis vel est porttitor interdum. Sed risusdak velit, facilisis et arcu
+                    hendrerit, scelerisque iaculis felis...</p>
             </div>
         </div>
 
@@ -127,11 +159,17 @@
                     <li>|</li>
                     <li><a href="#"><i class="fa fa-comments-o"></i> 109</a></li>
                 </ul>
-                <p>Donec semper tempus nisi, non gravida augue iaculis ate. Maecenas pharetra turpis est, vitae venenatis eleifend itae amet. Mauris sit amet sapien eget lacus posuere . Aliqusa condimen tum purus lectus, id commodo reelit ullamcorpe at. Duis in neque elit. Donec sit amet arcu a nislae rhoncu sodales vel lacus. Quisq sit amet lacus nisl augue. Nullae por ornare erat, commodo ultrices laoreet odio pharetrase. Duispas mod felis vel est porttitor interdum. Sed risusdak velit, facilisis et arcu hendrerit, scelerisque iaculis felis...</p>
+                <p>Donec semper tempus nisi, non gravida augue iaculis ate. Maecenas pharetra turpis est, vitae
+                    venenatis eleifend itae amet. Mauris sit amet sapien eget lacus posuere . Aliqusa condimen tum purus
+                    lectus, id commodo reelit ullamcorpe at. Duis in neque elit. Donec sit amet arcu a nislae rhoncu
+                    sodales vel lacus. Quisq sit amet lacus nisl augue. Nullae por ornare erat, commodo ultrices laoreet
+                    odio pharetrase. Duispas mod felis vel est porttitor interdum. Sed risusdak velit, facilisis et arcu
+                    hendrerit, scelerisque iaculis felis...</p>
             </div>
         </div>
 
-        <div class="grid-boxes-in grid-boxes-qoute masonry-brick" style="position: absolute; width: 362px; top: 836px; left: 15px;">
+        <div class="grid-boxes-in grid-boxes-qoute masonry-brick"
+             style="position: absolute; width: 362px; top: 836px; left: 15px;">
             <div class="grid-boxes-caption grid-boxes-quote bg-color-blue">
                 <p>Computer Science is no more about computers than astronomy is about telescopes.</p>
                 <span>- Edsger W. Dijkstra -</span>
@@ -149,13 +187,15 @@
                     <li>|</li>
                     <li><a href="#"><i class="fa fa-comments-o"></i> 15</a></li>
                 </ul>
-                <p>Donec semper tempus nisi, non gravida augue iaculis ate. Maecenas pharetra turpis est, vitae venenatis eleifend itae amet. Mauris sit amet sapien eget lacus posuere.</p>
+                <p>Donec semper tempus nisi, non gravida augue iaculis ate. Maecenas pharetra turpis est, vitae
+                    venenatis eleifend itae amet. Mauris sit amet sapien eget lacus posuere.</p>
             </div>
         </div>
 
         <div class="grid-boxes-in masonry-brick" style="position: absolute; width: 362px; top: 1086px; left: 15px;">
             <div class="responsive-video">
-                <iframe frameborder="0" src="//player.vimeo.com/video/70528799" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+                <iframe frameborder="0" src="//player.vimeo.com/video/70528799" webkitallowfullscreen=""
+                        mozallowfullscreen="" allowfullscreen=""></iframe>
             </div>
             <div class="grid-boxes-caption">
                 <h3><a href="#">Unify Fully Responsive Bootstrap Template</a></h3>
@@ -166,16 +206,25 @@
                     <li>|</li>
                     <li><a href="#"><i class="fa fa-comments-o"></i> 32</a></li>
                 </ul>
-                <p>Donec semper tempus nisi, non gravida augue iaculis ate. Maecenas pharetra turpis est, vitae venenatis eleifend itae amet. Mauris sit amet sapien eget lacus posuere.</p>
+                <p>Donec semper tempus nisi, non gravida augue iaculis ate. Maecenas pharetra turpis est, vitae
+                    venenatis eleifend itae amet. Mauris sit amet sapien eget lacus posuere.</p>
             </div>
         </div>
 
-        <div class="grid-boxes-in grid-boxes-qoute masonry-brick" style="position: absolute; width: 362px; top: 1230px; left: 405px;">
+        <div class="grid-boxes-in grid-boxes-qoute masonry-brick"
+             style="position: absolute; width: 362px; top: 1230px; left: 405px;">
             <div class="grid-boxes-caption grid-boxes-quote">
                 <p>Photography is more than a medium for factual communication of ideas. It is a creative art.</p>
                 <span>- Ansel Adams -</span>
             </div>
         </div>
+        {% endcomment %}
+
     </div><!--/container-->
-</div>
+    </div>
+
+
+
+
+    {% include 'blog/snippets/pagination.html' %}
 {% endblock %}

@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'photologue',
     'sortedm2m',
     'fontawesome',
+    'django_extensions',
 
     'apps',
     'apps.about',

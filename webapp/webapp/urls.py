@@ -4,11 +4,11 @@ from django.views.generic import TemplateView
 from django.contrib import admin
 from django.conf import settings
 
-
+from apps import urls
 
 
 urlpatterns = [
-    url(r'^', include('apps.urls', 'apps')),
+    url(r'', include(urls, namespace='apps')),
 
     #url(r'^jet/', include('jet.urls', 'jet')),
     url(r'^admin/', admin.site.urls),
