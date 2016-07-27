@@ -8,7 +8,7 @@ urlpatterns = [
 
     url(r'^news/', include(blog_urls, namespace='blog')),
 
-
+    url(r'^$', Index.as_view(), name='index'),
 ]
 '''
 url(r'^$', Index.as_view(), name='index'),
