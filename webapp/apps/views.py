@@ -3,8 +3,8 @@ from django.views.generic import DetailView, TemplateView
 from company.models import Employee
 from products.models import Product
 from about.models import ContentBox, TextBox
-from services.models import ServiceGroup
-
+from services.models import ServiceGroup, Service
+from blog.models import Article
 
 class Index(TemplateView):
     template_name = 'index.html'
@@ -22,5 +22,8 @@ class Index(TemplateView):
 
         context['textboxes'] = TextBox.objects.all()
 
-        context['service_groups'] = ServiceGroup.objects.all()
+        context['services'] = Service.objects.all()
+
+        context['latest_news'] = Article.objects.filter(publish=True)[:3]
+
         return context
