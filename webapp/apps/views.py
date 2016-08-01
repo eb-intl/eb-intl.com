@@ -8,6 +8,7 @@ from blog.models import Article
 
 class Index(TemplateView):
     template_name = 'index.html'
+
     def get_context_data(self, **kwargs):
         # Call the base implementation first to get a context
         context = super(Index, self).get_context_data(**kwargs)
@@ -24,6 +25,6 @@ class Index(TemplateView):
 
         context['services'] = Service.objects.all()
 
-        context['latest_news'] = Article.objects.filter(publish=True)[:3]
+        context['latest_news'] = Article.objects.all()[:3]
 
         return context

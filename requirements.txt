@@ -4,5 +4,5 @@ bpython>=0.12
 pytz==2016.4
 django-jet==0.1.4
 django-fontawesome==0.2.6
-django-bshell==1.0.3
+django-extensions==1.6.7
 

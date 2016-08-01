@@ -30,10 +30,16 @@
 	<link rel="stylesheet" href="{% static 'assets/plugins/line-icons/line-icons.css' %}">
 	<link rel="stylesheet" href="{% static 'assets/plugins/font-awesome/css/font-awesome.min.css' %}">
 	<link rel="stylesheet" href="{% static 'assets/plugins/pace/pace-flash.css' %}">
-	<link rel="stylesheet" href="{% static 'assets/plugins/owl-carousel/owl.carousel.css' %}">
+
+
+    <link rel="stylesheet" href="/static/assets/plugins/owl-carousel/owl-carousel/owl.carousel.css">
+
 	<link rel="stylesheet" href="{% static 'assets/plugins/cube-portfolio/cubeportfolio/css/cubeportfolio.min.css' %}">
 	<link rel="stylesheet" href="{% static 'assets/plugins/cube-portfolio/cubeportfolio/custom/custom-cubeportfolio.css' %}">
 	<link rel="stylesheet" href="{% static 'assets/plugins/revolution-slider/rs-plugin/css/settings.css' %}" type="text/css" media="screen">
+
+
+
 	<!--[if lt IE 9]>
 	<link rel="stylesheet" href="{% static 'assets/plugins/revolution-slider/rs-plugin/css/settings-ie8.css' %}" type="text/css" media="screen"><![endif]-->
 
@@ -67,6 +73,7 @@ The data-spy and data-target are part of the built-in Bootstrap scrollspy functi
 	<script src="{% static 'assets/plugins/jquery/jquery.min.js' %}"></script>
 	<script src="{% static 'assets/plugins/jquery/jquery-migrate.min.js' %}"></script>
 	<script src="{% static 'assets/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+
 	<!-- JS Implementing Plugins -->
 	<script src="{% static 'assets/plugins/smoothScroll.js' %}"></script>
 	<script src="{% static 'assets/plugins/jquery.easing.min.js' %}"></script>
@@ -74,33 +81,25 @@ The data-spy and data-target are part of the built-in Bootstrap scrollspy functi
 	<script src="{% static 'assets/plugins/jquery.parallax.js' %}"></script>
 	<script src="{% static 'assets/plugins/counter/waypoints.min.js' %}"></script>
 	<script src="{% static 'assets/plugins/counter/jquery.counterup.min.js' %}"></script>
-	<script src="{% static 'assets/plugins/owl-carousel/owl.carousel.js' %}"></script>
+
+	<script src="/static/assets/plugins/owl-carousel/owl-carousel/owl.carousel.js"></script>
+
 	<script src="{% static 'assets/plugins/sky-forms-pro/skyforms/js/jquery.form.min.js' %}"></script>
 	<script src="{% static 'assets/plugins/sky-forms-pro/skyforms/js/jquery.validate.min.js' %}"></script>
 	<script src="{% static 'assets/plugins/revolution-slider/rs-plugin/js/jquery.themepunch.tools.min.js' %}"></script>
 	<script src="{% static 'assets/plugins/revolution-slider/rs-plugin/js/jquery.themepunch.revolution.min.js' %}"></script>
 	<script src="{% static 'assets/plugins/cube-portfolio/cubeportfolio/js/jquery.cubeportfolio.min.js' %}"></script>
-	<!-- JS Page Level-->
+
+    <!-- JS Page Level-->
 	<script src="{% static 'assets/js/one.app.js' %}"></script>
 	<script src="{% static 'assets/js/forms/login.js' %}"></script>
 	<script src="{% static 'assets/js/forms/contact.js' %}"></script>
 	<script src="{% static 'assets/js/plugins/pace-loader.js' %}"></script>
-	<script src="{% static 'assets/js/plugins/owl-carousel.js' %}"></script>
+    <script src="/static/assets/js/plugins/owl-carousel.js"></script>
 	<script src="{% static 'assets/js/plugins/style-switcher.js' %}"></script>
 	<script src="{% static 'assets/js/plugins/revolution-slider.js' %}"></script>
 	<script src="{% static 'assets/js/plugins/cube-portfolio/cube-portfolio-lightbox.js' %}"></script>
-	<script>
-		jQuery(document).ready(function() {
-			App.init();
-			App.initCounter();
-			App.initParallaxBg();
-			LoginForm.initLoginForm();
-			ContactForm.initContactForm();
-			OwlCarousel.initOwlCarousel();
-			StyleSwitcher.initStyleSwitcher();
-			RevolutionSlider.initRSfullScreen();
-		});
-	</script>
+
 	<!--[if lt IE 9]>
 		<script src="{% static 'assets/plugins/respond.js' %}"></script>
 		<script src="{% static 'assets/plugins/html5shiv.js' %}"></script>
@@ -111,6 +110,51 @@ The data-spy and data-target are part of the built-in Bootstrap scrollspy functi
 	<!--[if lt IE 10]>
 		<script src="{% static 'assets/plugins/sky-forms-pro/skyforms/js/jquery.placeholder.min.js' %}"></script>
 		<![endif]-->
+
+	<script>
+		jQuery(document).ready(function() {
+			App.init();
+			App.initCounter();
+			App.initParallaxBg();
+			LoginForm.initLoginForm();
+			ContactForm.initContactForm();
+			OwlCarousel.initOwlCarousel();
+			StyleSwitcher.initStyleSwitcher();
+			RevolutionSlider.initRSfullScreen();
+
+            $(document).ready(function() {
+
+  var owl = $("#owl-slider");
+
+  owl.owlCarousel({
+      items : 10, //10 items above 1000px browser width
+      itemsDesktop : [1000,5], //5 items between 1000px and 901px
+      itemsDesktopSmall : [900,3], // betweem 900px and 601px
+      itemsTablet: [600,2], //2 items between 600 and 0
+      itemsMobile : false // itemsMobile disabled - inherit from itemsTablet option
+  });
+
+  // Custom Navigation Events
+  $(".next").click(function(){
+    owl.trigger('owl.next');
+  })
+  $(".prev").click(function(){
+    owl.trigger('owl.prev');
+  })
+  $(".play").click(function(){
+    owl.trigger('owl.play',1000); //owl.play event accept autoPlay speed as second parameter
+  })
+  $(".stop").click(function(){
+    owl.trigger('owl.stop');
+  })
+
+});
+
+		});
+	</script>
+
+
+
 {% endblock %}
 
 		{% include 'snippets/googlecode.html' %}

@@ -7,7 +7,7 @@
             <div class="row">
                 <!-- About -->
                 <div class="col-md-3 md-margin-bottom-40">
-                    <a href="index.html"><img id="logo-footer" class="footer-logo" src="/static/assets/img/logo.gif"
+                    <a href="/"><img id="logo-footer" class="footer-logo" src="{% static 'assets/img/logo.gif' %}"
                                              height="60", width="160" alt=""></a>
                     <p>Lorem dolor sit amet, consectetur  elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor et dolore magna aliqua.</p>
@@ -17,7 +17,7 @@
                 <!-- Latest -->
                 <div class="col-md-3 md-margin-bottom-40">
                     <div class="posts">
-                        <div class="headline"><h2>Latest Posts</h2></div>
+                        <div class="headline"><a href="{% url 'apps:blog:list' %}"><h2>Latest Posts</h2></a></div>
                         <ul class="list-unstyled latest-list">
                             {% for post in latest_news.all %}
                                 <li>
@@ -65,9 +65,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <p>
-                        2015 © All Rights Reserved.
-                        <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+                    <p>{% trans '2016 © All Rights Reserved.' %}
+                        <a href="#">{% trans 'Privacy Policy' %}</a> | <a href="#">{% trans 'Terms of Service' %}</a>
                     </p>
                 </div>
 
